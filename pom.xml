@@ -19,6 +19,15 @@
         <module>navi-java-server</module>
     </modules>
 
+    <profiles>
+        <profile>
+            <id>android</id>
+            <modules>
+                <module>navi-java-droid</module>
+            </modules>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
             <plugin>
