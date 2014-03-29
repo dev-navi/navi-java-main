@@ -1,0 +1,16 @@
+option java_package = "navi.common.proto";
+option java_outer_classname = "CommonProto";
+
+option optimize_for = SPEED;
+
+enum Type {
+    SET = 1;
+    CHANGE = 2;
+}
+
+message ControlMessage {
+
+    required Type type = 1;
+    required int32 left = 2;
+    required int32 right = 3;
+}

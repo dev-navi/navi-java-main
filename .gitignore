@@ -1,0 +1,11 @@
+.idea/
+
+*.ipr
+*.iml
+*.iws
+
+*.class
+
+*~
+
+local.properties
