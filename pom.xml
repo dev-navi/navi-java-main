@@ -19,15 +19,6 @@
         <module>navi-java-server</module>
     </modules>
 
-    <profiles>
-        <profile>
-            <id>android</id>
-            <modules>
-                <module>navi-java-droid</module>
-            </modules>
-        </profile>
-    </profiles>
-
     <build>
         <plugins>
             <plugin>
@@ -41,6 +32,13 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>amber-java-clients-mvn-repo</id>
+            <url>https://github.com/dev-amber/amber-java-clients/raw/mvn-repo</url>
+        </repository>
+    </repositories>
 
 </project>
 
