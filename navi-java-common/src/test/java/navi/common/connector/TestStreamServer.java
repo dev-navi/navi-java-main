@@ -13,7 +13,7 @@ import java.net.ServerSocket;
 public class TestStreamServer {
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        InetAddress address = InetAddress.getByName("127.0.0.1");
+        InetAddress address = InetAddress.getByName("0.0.0.0");
         int port = 1234;
         ServerSocket socket = new ServerSocket();
 
