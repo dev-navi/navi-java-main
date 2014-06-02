@@ -4,7 +4,7 @@ import navi.main.NaviConfig;
 import navi.main.NaviObject;
 import pl.edu.agh.amber.hokuyo.HokuyoProxy;
 import pl.edu.agh.amber.hokuyo.MapPoint;
-import pl.edu.agh.amber.hokuyo.SingleScan;
+import pl.edu.agh.amber.hokuyo.Scan;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,12 +21,10 @@ public class HokuyoHelper extends NaviObject<HokuyoListener>
 
     public HokuyoHelper(HokuyoProxy hokuyoProxy) throws IOException {
         this.hokuyoProxy = hokuyoProxy;
-        hokuyoProxy.setHighSensitive(HIGH_SENSITIVE);
-        hokuyoProxy.laserOn();
     }
 
     public List<MapPoint> getScan() throws Exception {
-        SingleScan scan = hokuyoProxy.getSingleScan();
+        Scan scan = hokuyoProxy.getSingleScan();
         return scan.getPoints();
     }
 
@@ -34,7 +32,7 @@ public class HokuyoHelper extends NaviObject<HokuyoListener>
     public void run() {
         try {
             while (true) {
-                SingleScan _scan = hokuyoProxy.getSingleScan();
+                Scan _scan = hokuyoProxy.getSingleScan();
                 List<MapPoint> scan = _scan.getPoints();
                 if (scan != null && hasListener()) {
                     getListener().notifyReceivedScan(scan);
